@@ -1,25 +1,44 @@
-<mat-paginator [length]="count"
+<div class="paginator" style="position: sticky;top: 0; z-index: 99;">
+    <mat-paginator [length]="count"
               [pageSize]="pageSize"
               aria-label="Select Planet Page"
               (page)="onPageChange($event)"
               >
-</mat-paginator>
+    </mat-paginator>
+</div>
 <ng-container *ngIf="results">
     <div class="responsive-grid">
         <ng-container *ngFor="let item of results.results">
-            <div style="padding-right: 1rem;padding-left: 1rem;">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>{{item.name}}</mat-card-title>
-                        <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        {{item.terrain}}
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-stroked-button color="primary">VIEW</button>
-                    </mat-card-actions>
-                </mat-card>
+            <div style="padding: 1rem;">
+                <div class="card">
+                <!-- <mat-card> -->
+                    <h3 style="margin: 0;padding: 1rem;border-bottom: 1px solid white;">{{item.name}}</h3>
+                        <mat-list>
+                            <mat-list-item>
+                              <mat-icon matListItemIcon>cloud</mat-icon>
+                              <div matListItemTitle>{{item.climate}}</div>
+                              <div matListItemLine>Climate</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>rocket</mat-icon>
+                                <div matListItemTitle>{{item.gravity}}</div>
+                                <div matListItemLine>Gravity</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>terrain</mat-icon>
+                                <div matListItemTitle>{{item.terrain}}</div>
+                                <div matListItemLine>Terrain</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>people</mat-icon>
+                                <div matListItemTitle>{{item.population}}</div>
+                                <div matListItemLine>Population</div>
+                            </mat-list-item>
+                          </mat-list>
+
+                        <button mat-raised-button color="primary" style="margin: 1rem; float: right;">View Details</button>
+                <!-- </mat-card> -->
+                </div>
             </div>
         </ng-container>
     </div>

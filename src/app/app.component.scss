@@ -20,3 +20,16 @@
   ::ng-deep mat-drawer{
     width: 200px !important;
   }
+
+  ::ng-deep mat-drawer-container { flex: 1 1 auto; }
+
+mat-drawer{
+    background: rgb(71,71,71);
+background: linear-gradient(135deg, rgba(71,71,71,1) 0%, rgba(0,0,0,1) 100%);
+}
+mat-drawer-content{
+    // background-color: rgb(111, 0, 0);
+    background-image: url(/assets/white-2484120_640.png) ;
+    background: rgb(71,71,71);
+    background: linear-gradient(135deg, rgba(71,71,71,1) 0%, rgba(0,0,0,1) 100%);
+}
