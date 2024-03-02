@@ -1,1 +1,27 @@
-<p>planets works!</p>
+<mat-paginator [length]="count"
+              [pageSize]="pageSize"
+              aria-label="Select Planet Page"
+              (page)="onPageChange($event)"
+              >
+</mat-paginator>
+<ng-container *ngIf="results">
+    <div class="responsive-grid">
+        <ng-container *ngFor="let item of results.results">
+            <div style="padding-right: 1rem;padding-left: 1rem;">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{item.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-divider></mat-divider>
+                        {{item.terrain}}
+                        <mat-divider></mat-divider>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-stroked-button color="primary">VIEW</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>

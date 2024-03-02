@@ -13,6 +13,10 @@ export class ApiService {
     private http : HttpClient
   ) { }
 
+  public getDirect(url:string):Observable<any>{
+    return this.http.get(url);
+  }
+
   public executeGet(requestData : ApiRequest):Observable<any>{
     let params = new HttpParams();
     if(requestData.params){

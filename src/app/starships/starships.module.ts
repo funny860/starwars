@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StarshipsRoutingModule } from './starships-routing.module';
 import { StarshipsComponent } from './starships.component';
+import { CommonsModule } from '../commons/commons.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { StarshipsComponent } from './starships.component';
   ],
   imports: [
     CommonModule,
-    StarshipsRoutingModule
+    StarshipsRoutingModule,
+    CommonsModule
   ]
 })
 export class StarshipsModule { }

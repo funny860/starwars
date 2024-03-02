@@ -1,0 +1,11 @@
+::ng-deep mat-card{
+    width: 100%;
+    // gap: 10%;
+    padding: 12px;
+}
+
+.responsive-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+    gap: 2rem;
+}
