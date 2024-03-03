@@ -62,7 +62,7 @@ export class DetailsComponent {
               )
             }
           );
-          this.loader.startLoading();
+          this.loader.stopLoading();
           // this.films = this.getDataList(res.films,'films');
         },
         error : (err)=>{
