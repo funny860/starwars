@@ -24,8 +24,7 @@
   ::ng-deep mat-drawer-container { flex: 1 1 auto; }
 
 mat-drawer{
-    background: rgb(71,71,71);
-background: linear-gradient(135deg, rgba(71,71,71,1) 0%, rgba(0,0,0,1) 100%);
+//     s
 }
 mat-drawer-content{
     // background-color: rgb(111, 0, 0);
@@ -33,3 +32,17 @@ mat-drawer-content{
     background: rgb(71,71,71);
     background: linear-gradient(135deg, rgba(71,71,71,1) 0%, rgba(0,0,0,1) 100%);
 }
+
+.nav-style{
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  a{
+    color: white !important;
+  }
+}
+

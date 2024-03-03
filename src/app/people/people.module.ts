@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { PeopleRoutingModule } from './people-routing.module';
 import { PeopleComponent } from './people.component';
+import { DetailsComponent } from './details/details.component';
+import { CommonsModule } from '../commons/commons.module';
 
 
 @NgModule({
   declarations: [
-    PeopleComponent
+    PeopleComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,
-    PeopleRoutingModule
+    PeopleRoutingModule,
+    CommonsModule
   ]
 })
 export class PeopleModule { }

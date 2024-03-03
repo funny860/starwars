@@ -10,13 +10,19 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoaderComponent
+  ],
   imports: [
     CommonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule,
   ],
   exports : [
     MatSidenavModule,
@@ -29,6 +35,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatProgressBarModule,
     MatGridListModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    LoaderComponent
   ]
 })
 export class CommonsModule { }

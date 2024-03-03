@@ -1,0 +1,117 @@
+<app-loader>
+<div style="padding: 1rem;" *ngIf="planetData">
+    <!-- <mat-card> -->
+        <h2 style="margin: 0;padding: 1rem;">{{planetData.name}}</h2>
+        <div class="card">    
+            <mat-list>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>cloud</mat-icon>
+                    <div matListItemTitle>{{planetData.name}}</div>
+                    <div matListItemLine>Planet Name</div>
+                  </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListItemIcon>cloud</mat-icon>
+                  <div matListItemTitle>{{planetData.climate}}</div>
+                  <div matListItemLine>Climate</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>rocket</mat-icon>
+                    <div matListItemTitle>{{planetData.gravity}}</div>
+                    <div matListItemLine>Gravity</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>terrain</mat-icon>
+                    <div matListItemTitle>{{planetData.terrain}}</div>
+                    <div matListItemLine>Terrain</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>people</mat-icon>
+                    <div matListItemTitle>{{planetData.population}}</div>
+                    <div matListItemLine>Population</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>surface</mat-icon>
+                    <div matListItemTitle>{{planetData.surface_water}}</div>
+                    <div matListItemLine>Surface Water</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>meter</mat-icon>
+                    <div matListItemTitle>{{planetData.diameter}}</div>
+                    <div matListItemLine>Diameter</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>people</mat-icon>
+                    <div matListItemTitle>{{planetData.rotation_period}} Hrs</div>
+                    <div matListItemLine>Rotation (a day)</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>people</mat-icon>
+                    <div matListItemTitle>{{planetData.orbital_period}} Days</div>
+                    <div matListItemLine>Orbital (an year)</div>
+                </mat-list-item>
+              </mat-list>
+        </div>
+        <div>
+            <ng-container>
+                <h3 style="margin: 0;padding: 1rem;">Residents</h3>
+                <mat-spinner *ngIf="people.length != this.planetData.residents.length"></mat-spinner>
+                <div *ngIf="people.length == this.planetData.residents.length">
+                    <table mat-table [dataSource]="people" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="gender">
+                          <th mat-header-cell *matHeaderCellDef> Gender </th>
+                          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="view">
+                            <th mat-header-cell *matHeaderCellDef> View </th>
+                            <td mat-cell *matCellDef="let element">  
+                                <button mat-raised-button color="primary" [routerLink]="['/people/details']" [queryParams]="{url : element.url }">View Details</button>
+                            </td>
+                          </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="['name', 'gender','view']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['name', 'gender','view'];"></tr>
+                      </table>
+                      
+                      
+                </div>
+            </ng-container>
+
+            <br>
+            <ng-container>
+                <h3 style="margin: 0;padding: 1rem;">Films</h3>
+                <div *ngIf="films.length == this.planetData.films.length">
+                    <table mat-table [dataSource]="films" class="mat-elevation-z8">
+                        <ng-container matColumnDef="title">
+                          <th mat-header-cell *matHeaderCellDef> Title </th>
+                          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="director">
+                          <th mat-header-cell *matHeaderCellDef> Director </th>
+                          <td mat-cell *matCellDef="let element"> {{element.director}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="view">
+                            <th mat-header-cell *matHeaderCellDef> View </th>
+                            <td mat-cell *matCellDef="let element">  
+                                <button mat-raised-button color="primary" [routerLink]="['/films/details']" [queryParams]="{url : element.url }">View Details</button>
+                            </td>
+                          </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="['title', 'director','view']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['title', 'director','view'];"></tr>
+                      </table>
+                      
+                </div>
+            </ng-container>
+        </div>
+    <!-- </mat-card> -->
+</div>
+</app-loader>

@@ -1,0 +1,141 @@
+<app-loader>
+<div style="padding: 1rem;" *ngIf="residentData">
+    <!-- <mat-card> -->
+        <h2 style="margin: 0;padding: 1rem;">{{residentData.name}}</h2>
+        <div class="card">    
+            <mat-list>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>face</mat-icon>
+                    <div matListItemTitle>{{residentData.name}}</div>
+                    <div matListItemLine>Resident Name</div>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <mat-icon matListItemIcon>people</mat-icon>
+                    <div matListItemTitle>{{residentData.gender}} </div>
+                    <div matListItemLine>Gender</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon>date</mat-icon>
+                    <div matListItemTitle>{{residentData.birth_year}}</div>
+                    <div matListItemLine>Birth Year</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon matListItemIcon></mat-icon>
+                  <div matListItemTitle>{{residentData.height}} Cm</div>
+                  <div matListItemLine>Height</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon></mat-icon>
+                    <div matListItemTitle>{{residentData.mass}} Kg</div>
+                    <div matListItemLine>Mass</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon></mat-icon>
+                    <div matListItemTitle>{{residentData.hair_color}}</div>
+                    <div matListItemLine>Hair Color</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon></mat-icon>
+                    <div matListItemTitle>{{residentData.skin_color}}</div>
+                    <div matListItemLine>Skin Color</div>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon matListItemIcon></mat-icon>
+                    <div matListItemTitle>{{residentData.eye_color}}</div>
+                    <div matListItemLine>Eye Color</div>
+                </mat-list-item>
+               
+              </mat-list>
+        </div>
+        <div>
+            <ng-container>
+                <h3 style="margin: 0;padding: 1rem;">Vehicles</h3>
+                <mat-spinner *ngIf="vehicles.length != this.residentData.vehicles.length"></mat-spinner>
+                <div *ngIf="vehicles.length == this.residentData.vehicles.length">
+                    <table mat-table [dataSource]="vehicles" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="model">
+                          <th mat-header-cell *matHeaderCellDef> Model </th>
+                          <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="crew">
+                            <th mat-header-cell *matHeaderCellDef> Crew </th>
+                            <td mat-cell *matCellDef="let element">  {{element.crew}}
+                            </td>
+                          </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="['name', 'model','crew']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['name', 'model','crew'];"></tr>
+                      </table>
+                      
+                      
+                </div>
+            </ng-container>
+
+            <br>
+            <ng-container>
+                <h3 style="margin: 0;padding: 1rem;">Films</h3>
+                <div *ngIf="films.length == this.residentData.films.length">
+                    <table mat-table [dataSource]="films" class="mat-elevation-z8">
+                        <ng-container matColumnDef="title">
+                          <th mat-header-cell *matHeaderCellDef> Title </th>
+                          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="director">
+                          <th mat-header-cell *matHeaderCellDef> Director </th>
+                          <td mat-cell *matCellDef="let element"> {{element.director}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="episode">
+                            <th mat-header-cell *matHeaderCellDef> Episode </th>
+                            <td mat-cell *matCellDef="let element">  
+                                {{element.episode_id}}
+                            </td>
+                          </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="['title', 'director','episode']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['title', 'director','episode'];"></tr>
+                      </table>
+                      
+                </div>
+            </ng-container>
+
+            <br>
+            <ng-container>
+                <h3 style="margin: 0;padding: 1rem;">Starships</h3>
+                <div *ngIf="starships.length == this.residentData.starships.length">
+                    <table mat-table [dataSource]="starships" class="mat-elevation-z8">
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="crew">
+                          <th mat-header-cell *matHeaderCellDef> Crew </th>
+                          <td mat-cell *matCellDef="let element"> {{element.crew}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="consumables">
+                            <th mat-header-cell *matHeaderCellDef> Consumables </th>
+                            <td mat-cell *matCellDef="let element">  
+                                {{element.consumables}}
+                            </td>
+                          </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="['name', 'crew','consumables']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['name', 'crew','consumables'];"></tr>
+                      
+                      </table>
+                      
+                </div>
+            </ng-container>
+        </div>
+    <!-- </mat-card> -->
+</div>
+</app-loader>

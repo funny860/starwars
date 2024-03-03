@@ -1,1 +1,47 @@
-<p>people works!</p>
+<div class="paginator">
+    <mat-paginator [length]="count"
+              [pageSize]="pageSize"
+              aria-label="Select People Page"
+              (page)="onPageChange($event)"
+              >
+    </mat-paginator>
+</div>
+<app-loader>
+<ng-container *ngIf="results">
+    <div class="responsive-grid">
+        <ng-container *ngFor="let item of results.results">
+            <div class="outer-card-div">
+                <div class="card">
+                <!-- <mat-card> -->
+                    <h3 class="card-heading">{{item.name}}</h3>
+                        <mat-list>
+                            <mat-list-item>
+                              <mat-icon matListItemIcon>face</mat-icon>
+                              <div matListItemTitle>{{item.name}}</div>
+                              <div matListItemLine>Resident Name</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>person</mat-icon>
+                                <div matListItemTitle>{{item.height}} Cm</div>
+                                <div matListItemLine>Height</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>terrain</mat-icon>
+                                <div matListItemTitle>{{item.mass}} Kg</div>
+                                <div matListItemLine>Mass</div>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-icon matListItemIcon>eye</mat-icon>
+                                <div matListItemTitle>{{item.eye_color}}</div>
+                                <div matListItemLine>Eye Color</div>
+                            </mat-list-item>
+                          </mat-list>
+
+                        <button mat-raised-button color="primary" class="action-button" (click)="viewDetails(item)">View Details</button>
+                <!-- </mat-card> -->
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>
+</app-loader>

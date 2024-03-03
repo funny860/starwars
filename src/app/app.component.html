@@ -3,19 +3,13 @@
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="navbar.toggle()">
         <mat-icon>menu</mat-icon>
         </button>
-        <span>{{title}} Geek</span>
+        <span>{{title}} Geek - {{selectedRoute}}</span>
         <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-        </button>
     </mat-toolbar>
 <mat-drawer-container style="flex: 1;" hasBackdrop="false">
     <mat-drawer [opened]="true" mode="side" #navbar>
-        <mat-nav-list>
-            <mat-list-item (click)="showInfo(link)" *ngFor="let link of navigation" [activated]="link.isActive">
+        <mat-nav-list style="  margin: 1rem;">
+            <mat-list-item (click)="showInfo(link)" *ngFor="let link of navigation" [ngClass]="{'nav-style' : link.isActive}" [activated]="link.isActive">
                <a matListItemTitle>{{ link.title }}</a>
             </mat-list-item>
           </mat-nav-list>
