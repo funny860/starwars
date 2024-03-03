@@ -22,5 +22,5 @@ Step 2 :
     Go to project root directory and run `npm clean-install`.
 ##    
 Step 3 :
-    Rum  `npm start` at the project root directory if port 4200 project will start at [Local Host](http://localhost:4200/).
+    Run  `npm start` at the project root directory if port 4200 project will start at [Local Host](http://localhost:4200/).
     
